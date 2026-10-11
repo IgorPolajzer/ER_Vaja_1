@@ -4,15 +4,19 @@ import java.util.ArrayList;
 
 public class Trid extends Problem {
 
-    Trid(String name, int d) {
-        setD(d);
-        setName(name);
+    public Trid() {
+        setName("Trid");
+    }
+
+    @Override
+    public void setD(int d) {
+        super.setD(d);
         setLowerBound((double) -(d * d));
         setUpperBound((double) (d * d));
     }
 
     @Override
-    public double evaluate(ArrayList<Double> x) {
+    public double evaluate(ArrayList<Double> x_star) {
         return 0;
     }
 

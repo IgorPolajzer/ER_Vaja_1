@@ -4,15 +4,14 @@ import java.util.ArrayList;
 
 public class Michalewicz extends Problem {
 
-    Michalewicz(String name, int d) {
-        setD(d);
-        setName(name);
+    public Michalewicz() {
+        setName("Michalewicz");
         setLowerBound(0.0);
         setUpperBound(Math.PI);
     }
 
     @Override
-    public double evaluate(ArrayList<Double> x) {
+    public double evaluate(ArrayList<Double> x_star) {
         return 0;
     }
 

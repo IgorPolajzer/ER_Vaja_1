@@ -4,15 +4,14 @@ import java.util.ArrayList;
 
 public class Levy extends Problem {
 
-    Levy(String name, int d) {
-        setD(d);
-        setName(name);
+    public Levy() {
+        setName("Levy");
         setLowerBound(-10.0);
         setUpperBound(10.0);
     }
 
     @Override
-    public double evaluate(ArrayList<Double> x) {
+    public double evaluate(ArrayList<Double> x_star) {
         return 0;
     }
 

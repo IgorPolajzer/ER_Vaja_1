@@ -4,15 +4,14 @@ import java.util.ArrayList;
 
 public class Ackley extends Problem {
 
-    Ackley(String name, int d) {
-        setD(d);
-        setName(name);
+    public Ackley() {
+        setName("Ackley");
         setLowerBound(-32.768);
         setUpperBound(32.768);
     }
 
     @Override
-    public double evaluate(ArrayList<Double> x) {
+    public double evaluate(ArrayList<Double> x_star) {
         return 0;
     }
 

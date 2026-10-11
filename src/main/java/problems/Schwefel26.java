@@ -4,15 +4,14 @@ import java.util.ArrayList;
 
 public class Schwefel26 extends Problem {
 
-    Schwefel26(String name, int d) {
-        setD(d);
-        setName(name);
+    public Schwefel26() {
+        setName("Schwefel26");
         setLowerBound(-500.0);
         setUpperBound(500.0);
     }
 
     @Override
-    public double evaluate(ArrayList<Double> x) {
+    public double evaluate(ArrayList<Double> x_star) {
         return 0;
     }
 

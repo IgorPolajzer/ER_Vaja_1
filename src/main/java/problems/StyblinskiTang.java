@@ -4,15 +4,14 @@ import java.util.ArrayList;
 
 public class StyblinskiTang extends Problem {
 
-    StyblinskiTang(String name, int d) {
-        setD(d);
-        setName(name);
+    public StyblinskiTang() {
+        setName("StyblinskiTang");
         setLowerBound(-5.0);
         setUpperBound(5.0);
     }
 
     @Override
-    public double evaluate(ArrayList<Double> x) {
+    public double evaluate(ArrayList<Double> x_star) {
         return 0;
     }
 
