@@ -2,6 +2,7 @@ package problems;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
 
@@ -22,5 +23,12 @@ public abstract class Problem {
         if (x > getUpperBound() || x < getLowerBound())
             throw new Exception("[" + getName() + "]" + "Specimen entry is out of bounds. " +
                     "X:" + x + "; Upper bound:" + getUpperBound() + "; Lower bound:" + getLowerBound() + ".");
+    }
+
+    public void setDfromInput(ArrayList<Double> x_star) throws Exception {
+        if (CollectionUtils.isEmpty(x_star))
+            throw new Exception("The provided input is empty.");
+
+        setD(CollectionUtils.size(x_star));
     }
 }

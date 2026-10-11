@@ -1,7 +1,5 @@
 package problems;
 
-import org.apache.commons.collections4.CollectionUtils;
-
 import java.util.ArrayList;
 
 public class Sphere extends Problem {
@@ -14,12 +12,9 @@ public class Sphere extends Problem {
 
     @Override
     public double evaluate(ArrayList<Double> x_star) throws Exception {
+        setDfromInput(x_star);
+
         var result = 0.0;
-
-        if (CollectionUtils.isEmpty(x_star))
-            return result;
-
-        setD(CollectionUtils.size(x_star));
 
         for(int i = 0; i < getD(); i++) {
             var x = x_star.get(i);
