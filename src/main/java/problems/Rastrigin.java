@@ -11,8 +11,20 @@ public class Rastrigin extends Problem {
     }
 
     @Override
-    public double evaluate(ArrayList<Double> x_star) {
-        return 0;
+    public double evaluate(ArrayList<Double> x_star) throws Exception {
+        setDfromInput(x_star);
+
+        var sum = 0.0;
+
+        for(var i = 0; i < getD(); i++) {
+            var x = x_star.get(i);
+
+            checkBounds(x);
+
+            sum += x * x - 10 * Math.cos(2 * Math.PI * x);
+        }
+
+        return 10 * getD() + sum;
     }
 
     @Override
