@@ -127,17 +127,23 @@ TEST_P(ProblemTests, testStyblinskiTang) {
 TEST_F(ProblemTest, testMichalewicz) {
     Michalewicz problem;
 
-    // 1 dim.
-    std::vector specimenOne{2.20290552017261};
-    auto fitness = problem.evaluate(specimenOne);
+    // 2 dim.
+    std::vector specimenTwo{2.202906, 1.570796};
+    auto fitness = problem.evaluate(specimenTwo);
 
-    EXPECT_NEAR(-0.801303410098552549, fitness, 1e-9);
+    EXPECT_NEAR(-1.8013034, fitness, 1e-7);
+
+    // 5 dim.
+    std::vector specimenFive{2.202906, 1.570796, 1.284992, 1.923058, 1.720470};
+    fitness = problem.evaluate(specimenFive);
+
+    EXPECT_NEAR(-4.6876582, fitness, 1e-7);
 
     // 2 dim.
-    std::vector specimenTwo{2.20290552014618,1.57079632677565};
-    fitness = problem.evaluate(specimenTwo);
+    std::vector specimenTen{2.202906, 1.570796, 1.284992, 1.923058, 1.720470, 1.570796, 1.454414, 1.756087, 1.655717, 1.570796};
+    fitness = problem.evaluate(specimenTen);
 
-    EXPECT_NEAR(-1.80130341009855321, fitness, 1e-9);
+    EXPECT_NEAR(-9.6601517, fitness, 1e-7);
 }
 
 INSTANTIATE_TEST_SUITE_P(Dimensions, ProblemTests, testing::Values(2, 5, 10));
