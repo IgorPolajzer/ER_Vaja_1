@@ -18,6 +18,7 @@ add_library(er_core
         src/problems/Sphere.cpp
         src/problems/StyblinskiTang.cpp
         src/problems/Trid.cpp
+        src/problems/Bukin.cpp
 )
 target_include_directories(er_core PUBLIC src)
 

@@ -1,4 +1,9 @@
-#pragma once
+//
+// Created by igor on 10/13/26.
+//
+
+#ifndef ER_VAJA_1_BOUND_H
+#define ER_VAJA_1_BOUND_H
 
 #include <variant>
 #include <vector>
@@ -23,3 +28,5 @@ private:
     double number = 0.0;
     std::vector<double> range;
 };
+
+#endif //ER_VAJA_1_BOUND_H

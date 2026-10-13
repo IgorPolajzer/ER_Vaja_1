@@ -1,4 +1,9 @@
-#pragma once
+//
+// Created by igor on 10/13/26.
+//
+
+#ifndef ER_VAJA_1_PROBLEM_H
+#define ER_VAJA_1_PROBLEM_H
 
 #include <string>
 #include <vector>
@@ -34,3 +39,5 @@ private:
     double lowerBound = 0.0;
     double upperBound = 0.0;
 };
+
+#endif //ER_VAJA_1_PROBLEM_H
