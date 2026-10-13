@@ -3,6 +3,10 @@
 #include <sstream>
 #include <stdexcept>
 
+void checkFixedDimension(int dim) {
+    
+}
+
 void Problem::checkBoundsType(const Bound &lowerBound, const Bound &upperBound) {
     if (upperBound.isRange() != lowerBound.isRange())
         throw std::invalid_argument("The provided bounds are not of the same type.");

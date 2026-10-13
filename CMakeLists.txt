@@ -19,6 +19,7 @@ add_library(er_core
         src/problems/StyblinskiTang.cpp
         src/problems/Trid.cpp
         src/problems/Bukin.cpp
+        src/problems/CarromTable.cpp
 )
 target_include_directories(er_core PUBLIC src)
 
@@ -36,7 +37,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-add_executable(ProblemTest tests/ParameterizedProblemTest.cpp)
+add_executable(ProblemTest tests/ProblemTests.cpp)
 target_link_libraries(ProblemTest PRIVATE er_core GTest::gtest_main) # Adds a main which runs all registerd tests.
 
 include(GoogleTest)

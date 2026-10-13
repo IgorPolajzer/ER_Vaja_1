@@ -37,6 +37,8 @@ protected:
 
     static void checkBoundsType(const Bound &lowerBound, const Bound &upperBound);
 
+    static void checkFixedDimension(int dim);
+
 private:
     std::string name;
     int d = -1;
