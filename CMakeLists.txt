@@ -36,7 +36,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-add_executable(ProblemTest tests/ProblemTest.cpp)
+add_executable(ProblemTest tests/ParameterizedProblemTest.cpp)
 target_link_libraries(ProblemTest PRIVATE er_core GTest::gtest_main) # Adds a main which runs all registerd tests.
 
 include(GoogleTest)
