@@ -16,5 +16,8 @@ std::variant<double, std::vector<double> > Bound::getBound() const {
 }
 
 bool Bound::isRange() const {
-    return range.empty();
+    if (range.empty())
+        return false;
+
+    return true;
 }

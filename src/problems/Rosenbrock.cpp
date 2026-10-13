@@ -4,8 +4,8 @@
 
 Rosenbrock::Rosenbrock() {
     setName("Rosenbrock");
-    setLowerBound(-5.0);
-    setUpperBound(10.0);
+    setLowerBound(Bound(-5.0));
+    setUpperBound(Bound(10.0));
 }
 
 double Rosenbrock::evaluate(const std::vector<double> &x_star) {
@@ -16,8 +16,8 @@ double Rosenbrock::evaluate(const std::vector<double> &x_star) {
         auto x = x_star[i];
         auto x_plus_one = x_star[i + 1];
 
-        checkBounds(x);
-        checkBounds(x_plus_one);
+        checkBounds(x, i);
+        checkBounds(x_plus_one, i + 1);
 
         result += 100 * std::pow((x_plus_one - (x * x)), 2) + std::pow((x - 1), 2);
     }

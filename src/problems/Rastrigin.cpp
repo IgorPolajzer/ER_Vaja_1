@@ -5,8 +5,8 @@
 
 Rastrigin::Rastrigin() {
     setName("Rastrigin");
-    setLowerBound(-5.12);
-    setUpperBound(5.12);
+    setLowerBound(Bound(-5.12));
+    setUpperBound(Bound(5.12));
 }
 
 double Rastrigin::evaluate(const std::vector<double> &x_star) {
@@ -17,7 +17,7 @@ double Rastrigin::evaluate(const std::vector<double> &x_star) {
     for (int i = 0; i < getD(); i++) {
         auto x = x_star[i];
 
-        checkBounds(x);
+        checkBounds(x, i);
 
         sum += x * x - 10 * std::cos(2 * std::numbers::pi * x);
     }

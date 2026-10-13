@@ -5,8 +5,8 @@
 
 Levy::Levy() {
     setName("Levy");
-    setLowerBound(-10.0);
-    setUpperBound(10.0);
+    setLowerBound(Bound(-10.0));
+    setUpperBound(Bound(10.0));
 }
 
 double Levy::evaluate(const std::vector<double> &x_star) {
@@ -18,7 +18,7 @@ double Levy::evaluate(const std::vector<double> &x_star) {
     // Init omegas.
     for (int i = 0; i < getD(); i++) {
         auto x = x_star[i];
-        checkBounds(x);
+        checkBounds(x, i);
 
         auto omega = 1 + (x - 1) / 4;
         omegaList.push_back(omega);
@@ -29,7 +29,7 @@ double Levy::evaluate(const std::vector<double> &x_star) {
         auto x = x_star[i];
         auto omega = omegaList[i];
         auto omegaD = omegaList.back();
-        checkBounds(x);
+        checkBounds(x, i);
 
         secondTerm += std::pow((omega - 1), 2) * (1 + 10 * std::pow(std::sin(std::numbers::pi * omega + 1), 2));
         secondTerm += std::pow((omegaD - 1), 2) * (1 + std::pow(std::sin(2 * std::numbers::pi * omegaD), 2));

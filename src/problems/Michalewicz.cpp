@@ -4,8 +4,8 @@
 
 Michalewicz::Michalewicz() {
     setName("Michalewicz");
-    setLowerBound(0.0);
-    setUpperBound(std::numbers::pi);
+    setLowerBound(Bound(0.0));
+    setUpperBound(Bound(std::numbers::pi));
 }
 
 double Michalewicz::evaluate(const std::vector<double> & /*x_star*/) {

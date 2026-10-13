@@ -8,13 +8,15 @@
 #include <string>
 #include <vector>
 
+#include "misc/Bound.h"
+
 class Problem {
 public:
     virtual ~Problem() = default;
 
     virtual double evaluate(const std::vector<double> &x_star) = 0;
 
-    void checkBounds(double x) const;
+    void checkBounds(double x, int index) const;
 
     void setDfromInput(const std::vector<double> &x_star);
 
@@ -24,20 +26,22 @@ public:
     int getD() const { return d; }
     virtual void setD(int d) { this->d = d; }
 
-    double getLowerBound() const { return lowerBound; }
-    void setLowerBound(double lowerBound) { this->lowerBound = lowerBound; }
+    Bound getLowerBound() const { return lowerBound; }
+    void setLowerBound(const Bound lowerBound) { this->lowerBound = lowerBound; }
 
-    double getUpperBound() const { return upperBound; }
-    void setUpperBound(double upperBound) { this->upperBound = upperBound; }
+    Bound getUpperBound() const { return upperBound; }
+    void setUpperBound(const Bound upperBound) { this->upperBound = upperBound; }
 
 protected:
     virtual int generateRandomSolution() = 0;
 
+    static void checkBoundsType(const Bound &lowerBound, const Bound &upperBound);
+
 private:
     std::string name;
     int d = -1;
-    double lowerBound = 0.0;
-    double upperBound = 0.0;
+    Bound lowerBound = Bound(0.0);
+    Bound upperBound = Bound(0.0);
 };
 
 #endif //ER_VAJA_1_PROBLEM_H

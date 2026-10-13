@@ -2,8 +2,8 @@
 
 Sphere::Sphere() {
     setName("Sphere");
-    setLowerBound(-100.0);
-    setUpperBound(100.0);
+    setLowerBound(Bound(-100.0));
+    setUpperBound(Bound(100.0));
 }
 
 double Sphere::evaluate(const std::vector<double> &x_star) {
@@ -14,7 +14,7 @@ double Sphere::evaluate(const std::vector<double> &x_star) {
     for (int i = 0; i < getD(); i++) {
         auto x = x_star[i];
 
-        checkBounds(x);
+        checkBounds(x, i);
 
         result += x * x;
     }

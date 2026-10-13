@@ -4,8 +4,8 @@
 
 Schwefel26::Schwefel26() {
     setName("Schwefel26");
-    setLowerBound(-500.0);
-    setUpperBound(500.0);
+    setLowerBound(Bound(-500.0));
+    setUpperBound(Bound(500.0));
 }
 
 double Schwefel26::evaluate(const std::vector<double> &x_star) {
@@ -15,7 +15,7 @@ double Schwefel26::evaluate(const std::vector<double> &x_star) {
     for (int i = 0; i < getD(); i++) {
         auto x = x_star[i];
 
-        checkBounds(x);
+        checkBounds(x, i);
 
         sum += x * std::sin(std::sqrt(std::abs(x)));
     }

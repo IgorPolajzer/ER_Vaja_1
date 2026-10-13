@@ -8,8 +8,8 @@ Trid::Trid() {
 
 void Trid::setD(int d) {
     Problem::setD(d);
-    setLowerBound(-(d * d));
-    setUpperBound(d * d);
+    setLowerBound(Bound(-(d * d)));
+    setUpperBound(Bound(d * d));
 }
 
 double Trid::evaluate(const std::vector<double> &x_star) {
@@ -20,13 +20,13 @@ double Trid::evaluate(const std::vector<double> &x_star) {
 
     for (int i = 0; i < getD(); i++) {
         auto x = x_star[i];
-        checkBounds(x);
+        checkBounds(x, i);
 
         firstTerm += std::pow((x - 1), 2);
 
         if (i >= 1) {
             auto x_minus_one = x_star[i - 1];
-            checkBounds(x_minus_one);
+            checkBounds(x_minus_one, i - 1);
 
             secondTerm += x * x_minus_one;
         }

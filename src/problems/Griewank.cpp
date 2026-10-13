@@ -4,8 +4,8 @@
 
 Griewank::Griewank() {
     setName("Griewank");
-    setLowerBound(-600.0);
-    setUpperBound(600.0);
+    setLowerBound(Bound(-600.0));
+    setUpperBound(Bound(600.0));
 }
 
 double Griewank::evaluate(const std::vector<double> &x_star) {
@@ -16,7 +16,7 @@ double Griewank::evaluate(const std::vector<double> &x_star) {
     for (int i = 0; i < getD(); i++) {
         auto x = x_star[i];
 
-        checkBounds(x);
+        checkBounds(x, i);
 
         firstTerm += ((x * x) / 4000);
         secondTerm *= std::cos(x / std::sqrt(i + 1)) + 1;

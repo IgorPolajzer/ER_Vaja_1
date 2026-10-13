@@ -2,8 +2,8 @@
 
 StyblinskiTang::StyblinskiTang() {
     setName("StyblinskiTang");
-    setLowerBound(-5.0);
-    setUpperBound(5.0);
+    setLowerBound(Bound(-5.0));
+    setUpperBound(Bound(5.0));
 }
 
 double StyblinskiTang::evaluate(const std::vector<double> & /*x_star*/) {

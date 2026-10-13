@@ -5,8 +5,8 @@
 
 Ackley::Ackley() {
     setName("Ackley");
-    setLowerBound(-32.768);
-    setUpperBound(32.768);
+    setLowerBound(Bound(-32.768));
+    setUpperBound(Bound(32.768));
 }
 
 double Ackley::evaluate(const std::vector<double> &x_star) {
@@ -24,7 +24,7 @@ double Ackley::evaluate(const std::vector<double> &x_star) {
     for (int i = 0; i < getD(); i++) {
         auto x = x_star[i];
 
-        checkBounds(x);
+        checkBounds(x, i);
 
         firstSum += x * x;
         secondSum += std::cos(c * x);
