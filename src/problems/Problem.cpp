@@ -1,5 +1,6 @@
 #include "Problem.h"
 
+#include <random>
 #include <sstream>
 #include <stdexcept>
 
@@ -53,4 +54,8 @@ void Problem::setDfromInput(const std::vector<double> &x_star) {
         throw std::invalid_argument("The provided range bounds dont match the problem dimension.");
 
     setD(static_cast<int>(x_star.size()));
+}
+
+Solution Problem::generateRandomSolution(int maxFes) {
+    return Solution();
 }

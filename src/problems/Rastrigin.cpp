@@ -24,7 +24,3 @@ double Rastrigin::evaluate(const std::vector<double> &x_star) {
 
     return 10 * getD() + sum;
 }
-
-int Rastrigin::generateRandomSolution() {
-    return 0;
-}

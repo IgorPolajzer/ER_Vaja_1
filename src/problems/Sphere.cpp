@@ -21,7 +21,3 @@ double Sphere::evaluate(const std::vector<double> &x_star) {
 
     return result;
 }
-
-int Sphere::generateRandomSolution() {
-    return 0;
-}

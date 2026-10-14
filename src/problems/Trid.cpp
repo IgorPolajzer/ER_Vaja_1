@@ -34,7 +34,3 @@ double Trid::evaluate(const std::vector<double> &x_star) {
 
     return firstTerm - secondTerm;
 }
-
-int Trid::generateRandomSolution() {
-    return 0;
-}

@@ -12,9 +12,6 @@ public:
     CarromTable();
 
     double evaluate(const std::vector<double> &x_star) override;
-
-protected:
-    Solution generateRandomSolution(int maxFes) override;
 };
 
 

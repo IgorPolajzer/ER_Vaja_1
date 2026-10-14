@@ -40,7 +40,3 @@ double Ackley::evaluate(const std::vector<double> &x_star) {
 
     return firstTerm - secondTerm + a + std::exp(1.0);
 }
-
-int Ackley::generateRandomSolution() {
-    return 0;
-}

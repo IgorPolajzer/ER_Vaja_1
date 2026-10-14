@@ -24,7 +24,3 @@ double Bukin::evaluate(const std::vector<double> &x_star) {
 
     return firstTerm + secondTerm;
 }
-
-int Bukin::generateRandomSolution() {
-    return 0;
-}

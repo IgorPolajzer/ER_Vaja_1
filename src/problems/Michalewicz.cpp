@@ -24,7 +24,3 @@ double Michalewicz::evaluate(const std::vector<double> & x_star) {
 
     return - sum;
 }
-
-int Michalewicz::generateRandomSolution() {
-    return 0;
-}

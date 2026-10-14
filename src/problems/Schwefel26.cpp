@@ -22,7 +22,3 @@ double Schwefel26::evaluate(const std::vector<double> &x_star) {
 
     return -sum;
 }
-
-int Schwefel26::generateRandomSolution() {
-    return 0;
-}

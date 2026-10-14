@@ -39,7 +39,3 @@ double Levy::evaluate(const std::vector<double> &x_star) {
 
     return firstTerm + secondTerm;
 }
-
-int Levy::generateRandomSolution() {
-    return 0;
-}

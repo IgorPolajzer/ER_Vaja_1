@@ -23,7 +23,3 @@ double StyblinskiTang::evaluate(const std::vector<double> &x_star) {
 
     return 0.5 * secondTerm;
 }
-
-int StyblinskiTang::generateRandomSolution() {
-    return 0;
-}

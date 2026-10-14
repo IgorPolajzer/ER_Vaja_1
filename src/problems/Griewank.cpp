@@ -24,7 +24,3 @@ double Griewank::evaluate(const std::vector<double> &x_star) {
 
     return firstTerm - secondTerm;
 }
-
-int Griewank::generateRandomSolution() {
-    return 0;
-}

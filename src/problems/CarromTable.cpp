@@ -30,7 +30,3 @@ double CarromTable::evaluate(const std::vector<double> &x_star) {
 
     return firstTerm * secondTerm * thirdTerm * fourthTerm;
 }
-
-int CarromTable::generateRandomSolution() {
-    return 0;
-}

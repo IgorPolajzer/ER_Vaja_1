@@ -33,7 +33,8 @@ public:
     Bound getUpperBound() const { return upperBound; }
     void setUpperBound(const Bound upperBound) { this->upperBound = upperBound; }
 
-    virtual Solution generateRandomSolution(int maxFes) = 0;
+    Solution generateRandomSolution(int maxFes);
+
 protected:
     static void checkBoundsType(const Bound &lowerBound, const Bound &upperBound);
 

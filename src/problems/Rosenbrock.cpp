@@ -24,7 +24,3 @@ double Rosenbrock::evaluate(const std::vector<double> &x_star) {
 
     return result;
 }
-
-int Rosenbrock::generateRandomSolution() {
-    return 0;
-}
