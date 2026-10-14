@@ -18,7 +18,7 @@ double StyblinskiTang::evaluate(const std::vector<double> &x_star) {
 
         checkBounds(x, i);
 
-        secondTerm += std::pow(x, 4) - 16 * std::pow(x, 2) + 5 * x;
+        secondTerm += std::pow(x, 4) - 16.0 * std::pow(x, 2) + 5.0 * x;
     }
 
     return 0.5 * secondTerm;

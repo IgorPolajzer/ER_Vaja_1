@@ -3,9 +3,6 @@
 #include <sstream>
 #include <stdexcept>
 
-void checkFixedDimension(int dim) {
-    
-}
 
 void Problem::checkBoundsType(const Bound &lowerBound, const Bound &upperBound) {
     if (upperBound.isRange() != lowerBound.isRange())

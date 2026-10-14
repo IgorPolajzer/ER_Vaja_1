@@ -20,6 +20,12 @@ add_library(er_core
         src/problems/Trid.cpp
         src/problems/Bukin.cpp
         src/problems/CarromTable.cpp
+        src/algorithm/RandomSearch.cpp
+        src/algorithm/RandomSearch.h
+        src/algorithm/Solution.cpp
+        src/algorithm/Solution.h
+        src/algorithm/Algorithm.cpp
+        src/algorithm/Algorithm.h
 )
 target_include_directories(er_core PUBLIC src)
 

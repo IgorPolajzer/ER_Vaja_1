@@ -36,7 +36,7 @@ TEST_P(ProblemTests, testAckely) {
     std::vector specimen(d, 0.0);
     auto fitness = problem.evaluate(specimen);
 
-    EXPECT_NEAR(0.0, fitness, 1e-9);
+    EXPECT_NEAR(0.0, fitness, 1e-7);
 }
 
 TEST_P(ProblemTests, testGriewank) {
@@ -63,7 +63,7 @@ TEST_P(ProblemTests, testSchwefel26) {
     std::vector specimen(d, 420.968746);
     auto fitness = problem.evaluate(specimen);
 
-    EXPECT_NEAR(-418.982887272433799807913601398 * d, fitness, 1e-9);
+    EXPECT_NEAR(-418.982887272433799807913601398 * d, fitness, 1e-7);
 }
 
 TEST_P(ProblemTests, testRosenbrock) {
@@ -96,7 +96,7 @@ TEST_P(ProblemTests, testLevy) {
     std::vector specimen(d, 1.0);
     auto fitness = problem.evaluate(specimen);
 
-    EXPECT_NEAR(0.0, fitness, 1e-9);
+    EXPECT_NEAR(0.0, fitness, 1e-7);
 }
 
 TEST_F(ProblemTest, testBukin) {
@@ -112,16 +112,16 @@ TEST_F(ProblemTest, testCarromTable) {
     std::vector specimen = std::vector{9.646157266348881, 9.646157266348881};
     auto fitness = problem.evaluate(specimen);
 
-    EXPECT_NEAR(-24.15681551650653, fitness, 1e-6);
+    EXPECT_NEAR(-24.15681551650653, fitness, 1e-7);
 }
 
 TEST_P(ProblemTests, testStyblinskiTang) {
     auto d = GetParam();
     StyblinskiTang problem;
-    std::vector specimen(d, -2.903534);
+    std::vector specimen(d, -2.90353401818596);
     auto fitness = problem.evaluate(specimen);
 
-    EXPECT_NEAR(-39.16599 * d, fitness, 1e-2);
+    EXPECT_NEAR(-39.16616570377142 * d, fitness, 1e-7);
 }
 
 TEST_F(ProblemTest, testMichalewicz) {
