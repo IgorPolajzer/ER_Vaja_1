@@ -16,7 +16,7 @@ public:
     double evaluate(const std::vector<double> &x_star) override;
 
 protected:
-    int generateRandomSolution() override;
+    Solution generateRandomSolution(int maxFes) override;
 };
 
 #endif //ER_VAJA_1_TRID_H

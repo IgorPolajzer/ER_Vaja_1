@@ -10,8 +10,13 @@ Solution execute(Problem &problem, int maxFes) {
     int fes = 0;
 
     while(maxFes > fes) {
-        //auto candidate = problem.generateRandomSolution(maxFes);
+        auto solution = problem.generateRandomSolution(maxFes);
+
+        if (solution.getValue() >= bestSolution.getValue())
+            bestSolution = solution;
 
         fes++;
     }
+
+    return bestSolution;
 }

@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 
+#include "algorithm/Solution.h"
 #include "misc/Bound.h"
 
 class Problem {
@@ -32,9 +33,8 @@ public:
     Bound getUpperBound() const { return upperBound; }
     void setUpperBound(const Bound upperBound) { this->upperBound = upperBound; }
 
+    virtual Solution generateRandomSolution(int maxFes) = 0;
 protected:
-    virtual int generateRandomSolution() = 0;
-
     static void checkBoundsType(const Bound &lowerBound, const Bound &upperBound);
 
     static void checkFixedDimension(int dim);
