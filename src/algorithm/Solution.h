@@ -14,10 +14,10 @@ public:
     double getValue() const { return this->value; }
     void setValue(const double value) { this->value = value; }
 
-    const std::vector<double> &getPosition() const { return this->position; }
-    void setPosition(const std::vector<double> &position) { this->position = position; }
+    const std::pair<double, double> &getPosition() const { return this->position; }
+    void setPosition(const std::pair<double, double> &position) { this->position = position; }
 private:
-    std::vector<double> position;
+    std::pair<double, double> position;
     double value = 0;
 };
 

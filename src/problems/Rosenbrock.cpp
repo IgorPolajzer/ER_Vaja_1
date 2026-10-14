@@ -2,14 +2,11 @@
 
 #include <cmath>
 
-Rosenbrock::Rosenbrock() {
-    setName("Rosenbrock");
-    setLowerBound(Bound(-5.0));
-    setUpperBound(Bound(10.0));
+Rosenbrock::Rosenbrock(int d) : Problem("Rosenbrock", d, Bound(-5.0), Bound(10.0)) {
 }
 
 double Rosenbrock::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto result = 0.0;
     for (int i = 0; i < getD() - 1; i++) {

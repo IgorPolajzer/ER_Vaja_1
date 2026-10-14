@@ -9,7 +9,7 @@
 
 class Levy : public Problem {
 public:
-    Levy();
+    explicit Levy(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

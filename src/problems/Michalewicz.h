@@ -9,7 +9,7 @@
 
 class Michalewicz : public Problem {
 public:
-    Michalewicz();
+    explicit Michalewicz(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

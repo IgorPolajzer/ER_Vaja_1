@@ -1,13 +1,10 @@
 #include "Sphere.h"
 
-Sphere::Sphere() {
-    setName("Sphere");
-    setLowerBound(Bound(-100.0));
-    setUpperBound(Bound(100.0));
+Sphere::Sphere(int d) : Problem("Sphere", d, Bound(-100.0), Bound(100.0)) {
 }
 
 double Sphere::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto result = 0.0;
 

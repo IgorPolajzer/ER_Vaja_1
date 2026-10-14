@@ -6,19 +6,12 @@
 
 #include <cmath>
 #include <numbers>
-#include <stdexcept>
 
-CarromTable::CarromTable() {
-    setName("CarromTable");
-    setLowerBound(Bound(std::vector{-10.0, -10.0}));
-    setUpperBound(Bound(std::vector{10.0, 10.0}));
+CarromTable::CarromTable() : Problem("CarromTable", 2, Bound(std::vector{-10.0, -10.0}), Bound(std::vector{10.0, 10.0})) {
 }
 
 double CarromTable::evaluate(const std::vector<double> &x_star) {
-    if (x_star.size() != 2)
-        throw std::out_of_range("CarromTable specimen dimension is not 2. It should always be 2.");
-
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     checkBounds(x_star[0], 0);
     checkBounds(x_star[1], 1);

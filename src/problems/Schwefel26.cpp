@@ -2,14 +2,11 @@
 
 #include <cmath>
 
-Schwefel26::Schwefel26() {
-    setName("Schwefel26");
-    setLowerBound(Bound(-500.0));
-    setUpperBound(Bound(500.0));
+Schwefel26::Schwefel26(int d) : Problem("Schwefel26", d, Bound(-500.0), Bound(500.0)) {
 }
 
 double Schwefel26::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto sum = 0.0;
     for (int i = 0; i < getD(); i++) {

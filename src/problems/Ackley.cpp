@@ -3,14 +3,11 @@
 #include <cmath>
 #include <numbers>
 
-Ackley::Ackley() {
-    setName("Ackley");
-    setLowerBound(Bound(-32.768));
-    setUpperBound(Bound(32.768));
+Ackley::Ackley(int d) : Problem("Ackley", d, Bound(-32.768), Bound(32.768)) {
 }
 
 double Ackley::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto a = 20;
     auto b = 0.2;

@@ -3,7 +3,18 @@
 #include <random>
 #include <sstream>
 #include <stdexcept>
+#include <utility>
 
+Problem::Problem(std::string name, int d, Bound lowerBound, Bound upperBound)
+    : name(std::move(name)), d(d), lowerBound(std::move(lowerBound)), upperBound(std::move(upperBound)) {
+    if (d <= 0)
+        throw std::invalid_argument("The problem dimension must be positive.");
+
+    checkBoundsType(this->lowerBound, this->upperBound);
+
+    if (this->upperBound.isRange() && this->upperBound.getRange().size() != d)
+        throw std::invalid_argument("The provided range bounds dont match the problem dimension.");
+}
 
 void Problem::checkBoundsType(const Bound &lowerBound, const Bound &upperBound) {
     if (upperBound.isRange() != lowerBound.isRange())
@@ -41,21 +52,20 @@ void Problem::checkBounds(double x, int index) const {
     }
 }
 
-void Problem::setDfromInput(const std::vector<double> &x_star) {
-    auto upperBound = getUpperBound();
-    auto lowerBound = getLowerBound();
-
-    if (x_star.empty())
-        throw std::invalid_argument("The provided input is empty.");
-
-    checkBoundsType(lowerBound, upperBound);
-
-    if (upperBound.isRange() && x_star.size() != upperBound.getRange().size())
-        throw std::invalid_argument("The provided range bounds dont match the problem dimension.");
-
-    setD(static_cast<int>(x_star.size()));
+void Problem::checkDimension(const std::vector<double> &x_star) const {
+    if (x_star.size() != getD()) {
+        std::ostringstream msg;
+        msg << "[" << getName() << "]" << "Specimen dimension does not match the problem dimension. "
+                << "Specimen:" << x_star.size() << "; Problem:" << getD() << ".";
+        throw std::invalid_argument(msg.str());
+    }
 }
 
 Solution Problem::generateRandomSolution(int maxFes) {
+    auto upperBound = getUpperBound();
+    auto lowerBound = getLowerBound();
+
+
+
     return Solution();
 }

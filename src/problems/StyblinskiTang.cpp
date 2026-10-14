@@ -2,14 +2,11 @@
 
 #include <cmath>
 
-StyblinskiTang::StyblinskiTang() {
-    setName("StyblinskiTang");
-    setLowerBound(Bound(-5.0));
-    setUpperBound(Bound(5.0));
+StyblinskiTang::StyblinskiTang(int d) : Problem("StyblinskiTang", d, Bound(-5.0), Bound(5.0)) {
 }
 
 double StyblinskiTang::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto secondTerm = 0.0;
 

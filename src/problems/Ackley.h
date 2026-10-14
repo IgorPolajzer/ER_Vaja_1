@@ -9,7 +9,7 @@
 
 class Ackley : public Problem {
 public:
-    Ackley();
+    explicit Ackley(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

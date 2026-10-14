@@ -9,7 +9,7 @@
 
 class Rosenbrock : public Problem {
 public:
-    Rosenbrock();
+    explicit Rosenbrock(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

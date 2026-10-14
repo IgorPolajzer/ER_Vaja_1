@@ -9,7 +9,7 @@
 
 class Sphere : public Problem {
 public:
-    Sphere();
+    explicit Sphere(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

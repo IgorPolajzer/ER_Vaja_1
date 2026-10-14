@@ -3,14 +3,11 @@
 #include <cmath>
 #include <numbers>
 
-Levy::Levy() {
-    setName("Levy");
-    setLowerBound(Bound(-10.0));
-    setUpperBound(Bound(10.0));
+Levy::Levy(int d) : Problem("Levy", d, Bound(-10.0), Bound(10.0)) {
 }
 
 double Levy::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     std::vector<double> omegaList;
     auto secondTerm = 0.0;

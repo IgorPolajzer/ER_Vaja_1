@@ -2,14 +2,11 @@
 
 #include <cmath>
 
-Griewank::Griewank() {
-    setName("Griewank");
-    setLowerBound(Bound(-600.0));
-    setUpperBound(Bound(600.0));
+Griewank::Griewank(int d) : Problem("Griewank", d, Bound(-600.0), Bound(600.0)) {
 }
 
 double Griewank::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto firstTerm = 0.0;
     auto secondTerm = 0.0;

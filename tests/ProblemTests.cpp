@@ -23,7 +23,7 @@ class ProblemTests : public testing::TestWithParam<int> {
 
 TEST_P(ProblemTests, testSphere) {
     auto d = GetParam();
-    Sphere problem;
+    Sphere problem(d);
     std::vector specimen(d, 0.0);
     auto fitness = problem.evaluate(specimen);
 
@@ -32,7 +32,7 @@ TEST_P(ProblemTests, testSphere) {
 
 TEST_P(ProblemTests, testAckely) {
     auto d = GetParam();
-    Ackley problem;
+    Ackley problem(d);
     std::vector specimen(d, 0.0);
     auto fitness = problem.evaluate(specimen);
 
@@ -41,7 +41,7 @@ TEST_P(ProblemTests, testAckely) {
 
 TEST_P(ProblemTests, testGriewank) {
     auto d = GetParam();
-    Griewank problem;
+    Griewank problem(d);
     std::vector specimen(d, 0.0);
     auto fitness = problem.evaluate(specimen);
 
@@ -50,7 +50,7 @@ TEST_P(ProblemTests, testGriewank) {
 
 TEST_P(ProblemTests, testRastrigin) {
     auto d = GetParam();
-    Rastrigin problem;
+    Rastrigin problem(d);
     std::vector specimen(d, 0.0);
     auto fitness = problem.evaluate(specimen);
 
@@ -59,7 +59,7 @@ TEST_P(ProblemTests, testRastrigin) {
 
 TEST_P(ProblemTests, testSchwefel26) {
     auto d = GetParam();
-    Schwefel26 problem;
+    Schwefel26 problem(d);
     std::vector specimen(d, 420.968746);
     auto fitness = problem.evaluate(specimen);
 
@@ -68,7 +68,7 @@ TEST_P(ProblemTests, testSchwefel26) {
 
 TEST_P(ProblemTests, testRosenbrock) {
     auto d = GetParam();
-    Rosenbrock problem;
+    Rosenbrock problem(d);
     std::vector specimen(d, 1.0);
     auto fitness = problem.evaluate(specimen);
 
@@ -77,7 +77,7 @@ TEST_P(ProblemTests, testRosenbrock) {
 
 TEST_P(ProblemTests, testTrid) {
     auto d = GetParam();
-    Trid problem;
+    Trid problem(d);
     std::vector<double> specimen;
 
     for (int i = 1; i <= d; i++) {
@@ -92,7 +92,7 @@ TEST_P(ProblemTests, testTrid) {
 
 TEST_P(ProblemTests, testLevy) {
     auto d = GetParam();
-    Levy problem;
+    Levy problem(d);
     std::vector specimen(d, 1.0);
     auto fitness = problem.evaluate(specimen);
 
@@ -117,7 +117,7 @@ TEST_F(ProblemTest, testCarromTable) {
 
 TEST_P(ProblemTests, testStyblinskiTang) {
     auto d = GetParam();
-    StyblinskiTang problem;
+    StyblinskiTang problem(d);
     std::vector specimen(d, -2.90353401818596);
     auto fitness = problem.evaluate(specimen);
 
@@ -125,23 +125,24 @@ TEST_P(ProblemTests, testStyblinskiTang) {
 }
 
 TEST_F(ProblemTest, testMichalewicz) {
-    Michalewicz problem;
-
     // 2 dim.
+    Michalewicz problemTwo(2);
     std::vector specimenTwo{2.202906, 1.570796};
-    auto fitness = problem.evaluate(specimenTwo);
+    auto fitness = problemTwo.evaluate(specimenTwo);
 
     EXPECT_NEAR(-1.8013034, fitness, 1e-7);
 
     // 5 dim.
+    Michalewicz problemFive(5);
     std::vector specimenFive{2.202906, 1.570796, 1.284992, 1.923058, 1.720470};
-    fitness = problem.evaluate(specimenFive);
+    fitness = problemFive.evaluate(specimenFive);
 
     EXPECT_NEAR(-4.6876582, fitness, 1e-7);
 
-    // 2 dim.
+    // 10 dim.
+    Michalewicz problemTen(10);
     std::vector specimenTen{2.202906, 1.570796, 1.284992, 1.923058, 1.720470, 1.570796, 1.454414, 1.756087, 1.655717, 1.570796};
-    fitness = problem.evaluate(specimenTen);
+    fitness = problemTen.evaluate(specimenTen);
 
     EXPECT_NEAR(-9.6601517, fitness, 1e-7);
 }

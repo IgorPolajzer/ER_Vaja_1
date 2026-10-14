@@ -9,9 +9,7 @@
 
 class Trid : public Problem {
 public:
-    Trid();
-
-    void setD(int d) override;
+    explicit Trid(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

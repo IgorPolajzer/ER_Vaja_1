@@ -9,7 +9,7 @@
 
 class Griewank : public Problem {
 public:
-    Griewank();
+    explicit Griewank(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

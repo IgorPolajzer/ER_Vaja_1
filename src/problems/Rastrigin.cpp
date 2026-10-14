@@ -3,14 +3,11 @@
 #include <cmath>
 #include <numbers>
 
-Rastrigin::Rastrigin() {
-    setName("Rastrigin");
-    setLowerBound(Bound(-5.12));
-    setUpperBound(Bound(5.12));
+Rastrigin::Rastrigin(int d) : Problem("Rastrigin", d, Bound(-5.12), Bound(5.12)) {
 }
 
 double Rastrigin::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto sum = 0.0;
 

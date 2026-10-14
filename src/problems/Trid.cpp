@@ -2,18 +2,11 @@
 
 #include <cmath>
 
-Trid::Trid() {
-    setName("Trid");
-}
-
-void Trid::setD(int d) {
-    Problem::setD(d);
-    setLowerBound(Bound(-(d * d)));
-    setUpperBound(Bound(d * d));
+Trid::Trid(int d) : Problem("Trid", d, Bound(-static_cast<double>(d * d)), Bound(static_cast<double>(d * d))) {
 }
 
 double Trid::evaluate(const std::vector<double> &x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto firstTerm = 0.0;
     auto secondTerm = 0.0;

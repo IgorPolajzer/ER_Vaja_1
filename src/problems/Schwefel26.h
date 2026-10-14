@@ -9,7 +9,7 @@
 
 class Schwefel26 : public Problem {
 public:
-    Schwefel26();
+    explicit Schwefel26(int d);
 
     double evaluate(const std::vector<double> &x_star) override;
 };

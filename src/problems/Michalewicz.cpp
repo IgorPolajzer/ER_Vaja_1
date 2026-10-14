@@ -3,14 +3,11 @@
 #include <cmath>
 #include <numbers>
 
-Michalewicz::Michalewicz() {
-    setName("Michalewicz");
-    setLowerBound(Bound(0.0));
-    setUpperBound(Bound(std::numbers::pi));
+Michalewicz::Michalewicz(int d) : Problem("Michalewicz", d, Bound(0.0), Bound(std::numbers::pi)) {
 }
 
 double Michalewicz::evaluate(const std::vector<double> & x_star) {
-    setDfromInput(x_star);
+    checkDimension(x_star);
 
     auto m = 10;
     auto sum = 0.0;
