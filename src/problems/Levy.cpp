@@ -3,7 +3,7 @@
 #include <cmath>
 #include <numbers>
 
-Levy::Levy(int d) : Problem("Levy", d, Bound(-10.0), Bound(10.0)) {
+Levy::Levy(int d) : Problem("Levy", d, Bound(-10.0), Bound(10.0), true) {
 }
 
 double Levy::evaluate(const std::vector<double> &x_star) {

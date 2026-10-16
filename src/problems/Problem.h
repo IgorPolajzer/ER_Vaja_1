@@ -32,6 +32,8 @@ public:
 
     int getD() const { return d; }
 
+    bool isScalable() const { return scalable; }
+
     Bound getLowerBound() const { return lowerBound; }
     void setLowerBound(const Bound lowerBound) { this->lowerBound = lowerBound; }
 
@@ -41,13 +43,14 @@ public:
     Solution generateRandomSolution();
 
 protected:
-    Problem(std::string name, int d, Bound lowerBound, Bound upperBound);
+    Problem(std::string name, int d, Bound lowerBound, Bound upperBound, bool scalable);
 
     static void checkBoundsType(const Bound &lowerBound, const Bound &upperBound);
 
 private:
     std::string name;
     int d;
+    bool scalable;
     Bound lowerBound;
     Bound upperBound;
 };

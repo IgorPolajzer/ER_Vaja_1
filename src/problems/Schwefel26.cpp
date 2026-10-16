@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Schwefel26::Schwefel26(int d) : Problem("Schwefel26", d, Bound(-500.0), Bound(500.0)) {
+Schwefel26::Schwefel26(int d) : Problem("Schwefel26", d, Bound(-500.0), Bound(500.0), true) {
 }
 
 double Schwefel26::evaluate(const std::vector<double> &x_star) {

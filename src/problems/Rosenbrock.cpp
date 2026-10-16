@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Rosenbrock::Rosenbrock(int d) : Problem("Rosenbrock", d, Bound(-5.0), Bound(10.0)) {
+Rosenbrock::Rosenbrock(int d) : Problem("Rosenbrock", d, Bound(-5.0), Bound(10.0), true) {
 }
 
 double Rosenbrock::evaluate(const std::vector<double> &x_star) {

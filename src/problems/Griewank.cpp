@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Griewank::Griewank(int d) : Problem("Griewank", d, Bound(-600.0), Bound(600.0)) {
+Griewank::Griewank(int d) : Problem("Griewank", d, Bound(-600.0), Bound(600.0), true) {
 }
 
 double Griewank::evaluate(const std::vector<double> &x_star) {

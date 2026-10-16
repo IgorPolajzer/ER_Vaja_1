@@ -7,11 +7,11 @@
 #include "Algorithm.h"
 
 
-class RandomSearch : Algorithm {
+class RandomSearch : public Algorithm {
 public:
     ~RandomSearch() override = default;
 
-    Solution execute(Problem &problem, int maxFes);
+    Solution execute(Problem* problem, int maxFes) override;
 };
 
 

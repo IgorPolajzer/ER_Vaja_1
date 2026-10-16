@@ -3,7 +3,7 @@
 #include <cmath>
 #include <numbers>
 
-Rastrigin::Rastrigin(int d) : Problem("Rastrigin", d, Bound(-5.12), Bound(5.12)) {
+Rastrigin::Rastrigin(int d) : Problem("Rastrigin", d, Bound(-5.12), Bound(5.12), true) {
 }
 
 double Rastrigin::evaluate(const std::vector<double> &x_star) {

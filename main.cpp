@@ -1,14 +1,20 @@
-#include <iostream>
-
 #include "algorithm/RandomSearch.h"
+#include "algorithm/Runner.h"
+#include "problems/Ackley.h"
 #include "problems/Sphere.h"
+
+class Ackley;
 
 int main() {
     Sphere sphere(2);
-    RandomSearch randomSearch;
-    auto res = randomSearch.execute(sphere, 1000);
+    Ackley ackley(3);
 
-    std::cout << res.toString() << std::endl;
+    RandomSearch randomSearch;
+    std::vector<Problem*> problems;
+    problems.push_back(&sphere);
+    problems.push_back(&ackley);
+
+    Runner::execute(problems, randomSearch);
 
     return 0;
 }

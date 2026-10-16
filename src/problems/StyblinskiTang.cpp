@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-StyblinskiTang::StyblinskiTang(int d) : Problem("StyblinskiTang", d, Bound(-5.0), Bound(5.0)) {
+StyblinskiTang::StyblinskiTang(int d) : Problem("StyblinskiTang", d, Bound(-5.0), Bound(5.0), true) {
 }
 
 double StyblinskiTang::evaluate(const std::vector<double> &x_star) {

@@ -3,7 +3,7 @@
 #include <cmath>
 #include <numbers>
 
-Michalewicz::Michalewicz(int d) : Problem("Michalewicz", d, Bound(0.0), Bound(std::numbers::pi)) {
+Michalewicz::Michalewicz(int d) : Problem("Michalewicz", d, Bound(0.0), Bound(std::numbers::pi), true) {
 }
 
 double Michalewicz::evaluate(const std::vector<double> & x_star) {

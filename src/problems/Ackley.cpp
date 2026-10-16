@@ -3,7 +3,7 @@
 #include <cmath>
 #include <numbers>
 
-Ackley::Ackley(int d) : Problem("Ackley", d, Bound(-32.768), Bound(32.768)) {
+Ackley::Ackley(int d) : Problem("Ackley", d, Bound(-32.768), Bound(32.768), true) {
 }
 
 double Ackley::evaluate(const std::vector<double> &x_star) {

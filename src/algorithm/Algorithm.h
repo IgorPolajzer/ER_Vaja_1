@@ -12,8 +12,7 @@ class Algorithm {
 public:
     virtual ~Algorithm() = default;
 
-private:
-    virtual Solution execute(Problem &problem, int maxFes) = 0;
+    virtual Solution execute(Problem* problem, int maxFes) = 0;
 };
 
 

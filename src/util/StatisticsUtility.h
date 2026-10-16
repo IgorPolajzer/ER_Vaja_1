@@ -10,18 +10,15 @@
 
 class StatisticsUtility {
 public:
-    StatisticsUtility();
-
     virtual ~StatisticsUtility() = default;
 
-    void printStatistics(Problem &problem);
-
+    void printStatistics(std::vector<Solution> &solutions);
 protected:
-    Solution findBest(std::vector<Solution> solutions);
+    Solution findBest(const std::vector<Solution> &solutions);
 
-    double calculateAverage(std::vector<Solution> solutions);
+    double calculateAverage(const std::vector<Solution> &solutions);
 
-    double calculateStandardDeviation(std::vector<Solution> solutions);
+    double calculateStandardDeviation(const std::vector<Solution> &solutions);
 };
 
 

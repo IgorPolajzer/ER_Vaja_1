@@ -4,11 +4,12 @@
 
 #ifndef ER_VAJA_1_RUNNER_H
 #define ER_VAJA_1_RUNNER_H
+#include "Algorithm.h"
 #include "problems/Problem.h"
 
 
 namespace Runner {
-    void execute(const std::vector<Problem>& problems);
+    void execute(std::vector<Problem*> problems, Algorithm& algorithm);
 };
 
 

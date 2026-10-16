@@ -6,7 +6,7 @@
 
 #include <cmath>
 
-Bukin::Bukin() : Problem("Bukin", 2, Bound(std::vector{-15.0, -3.0}), Bound(std::vector{-5.0, 3.0})) {
+Bukin::Bukin() : Problem("Bukin", 2, Bound(std::vector{-15.0, -3.0}), Bound(std::vector{-5.0, 3.0}), false) {
 }
 
 double Bukin::evaluate(const std::vector<double> &x_star) {

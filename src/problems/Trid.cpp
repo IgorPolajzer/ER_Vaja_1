@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Trid::Trid(int d) : Problem("Trid", d, Bound(-static_cast<double>(d * d)), Bound(static_cast<double>(d * d))) {
+Trid::Trid(int d) : Problem("Trid", d, Bound(-static_cast<double>(d * d)), Bound(static_cast<double>(d * d)), true) {
 }
 
 double Trid::evaluate(const std::vector<double> &x_star) {

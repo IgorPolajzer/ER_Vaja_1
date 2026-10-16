@@ -7,7 +7,7 @@
 #include <cmath>
 #include <numbers>
 
-CarromTable::CarromTable() : Problem("CarromTable", 2, Bound(std::vector{-10.0, -10.0}), Bound(std::vector{10.0, 10.0})) {
+CarromTable::CarromTable() : Problem("CarromTable", 2, Bound(std::vector{-10.0, -10.0}), Bound(std::vector{10.0, 10.0}), false) {
 }
 
 double CarromTable::evaluate(const std::vector<double> &x_star) {

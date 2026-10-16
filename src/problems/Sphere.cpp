@@ -1,6 +1,6 @@
 #include "Sphere.h"
 
-Sphere::Sphere(int d) : Problem("Sphere", d, Bound(-100.0), Bound(100.0)) {
+Sphere::Sphere(int d) : Problem("Sphere", d, Bound(-100.0), Bound(100.0), true) {
 }
 
 double Sphere::evaluate(const std::vector<double> &x_star) {

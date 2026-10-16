@@ -147,4 +147,11 @@ TEST_F(ProblemTest, testMichalewicz) {
     EXPECT_NEAR(-9.6601517, fitness, 1e-7);
 }
 
+TEST_F(ProblemTest, testIsScalable) {
+    EXPECT_TRUE(Sphere(5).isScalable());
+    EXPECT_TRUE(Trid(3).isScalable());
+    EXPECT_FALSE(Bukin().isScalable());
+    EXPECT_FALSE(CarromTable().isScalable());
+}
+
 INSTANTIATE_TEST_SUITE_P(Dimensions, ProblemTests, testing::Values(2, 5, 10));
