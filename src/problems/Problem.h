@@ -17,6 +17,12 @@ public:
 
     virtual double evaluate(const std::vector<double> &x_star) = 0;
 
+    double evaluate(Solution &solution) {
+        double fitness = evaluate(solution.getPosition());
+        solution.setValue(fitness);
+        return fitness;
+    };
+
     void checkBounds(double x, int index) const;
 
     void checkDimension(const std::vector<double> &x_star) const;
@@ -32,7 +38,7 @@ public:
     Bound getUpperBound() const { return upperBound; }
     void setUpperBound(const Bound upperBound) { this->upperBound = upperBound; }
 
-    Solution generateRandomSolution(int maxFes);
+    Solution generateRandomSolution();
 
 protected:
     Problem(std::string name, int d, Bound lowerBound, Bound upperBound);

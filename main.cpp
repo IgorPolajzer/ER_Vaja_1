@@ -1,13 +1,14 @@
 #include <iostream>
-#include <vector>
 
+#include "algorithm/RandomSearch.h"
 #include "problems/Sphere.h"
 
 int main() {
     Sphere sphere(2);
-    std::vector specimen{5.12, -5.12};
-    auto res = sphere.evaluate(specimen);
-    std::cout << res << std::endl;
+    RandomSearch randomSearch;
+    auto res = randomSearch.execute(sphere, 1000);
+
+    std::cout << res.toString() << std::endl;
 
     return 0;
 }

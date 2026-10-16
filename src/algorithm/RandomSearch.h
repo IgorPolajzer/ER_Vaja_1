@@ -11,8 +11,7 @@ class RandomSearch : Algorithm {
 public:
     ~RandomSearch() override = default;
 
-protected:
-    Solution execute(Problem &problem, int maxFes) override;
+    Solution execute(Problem &problem, int maxFes);
 };
 
 

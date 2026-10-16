@@ -4,15 +4,15 @@
 
 #include "RandomSearch.h"
 
-
-Solution execute(Problem &problem, int maxFes) {
+Solution RandomSearch::execute(Problem &problem, int maxFes) {
     Solution bestSolution;
     int fes = 0;
 
-    while(maxFes > fes) {
-        auto solution = problem.generateRandomSolution(maxFes);
+    while(fes <= maxFes) {
+        auto solution = problem.generateRandomSolution();
+        auto fitness = problem.evaluate(solution);
 
-        if (solution.getValue() >= bestSolution.getValue())
+        if (fes == 0 || fitness < bestSolution.getValue())
             bestSolution = solution;
 
         fes++;

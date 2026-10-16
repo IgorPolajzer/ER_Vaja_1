@@ -61,11 +61,31 @@ void Problem::checkDimension(const std::vector<double> &x_star) const {
     }
 }
 
-Solution Problem::generateRandomSolution(int maxFes) {
+Solution Problem::generateRandomSolution() {
+    std::vector<double> position;
     auto upperBound = getUpperBound();
     auto lowerBound = getLowerBound();
 
+    checkBoundsType(lowerBound, upperBound);
 
+    for (int i = 0; i < getD(); i++) {
+        double lower, upper;
 
-    return Solution();
+        if (lowerBound.isRange() && upperBound.isRange()) {
+            lower = lowerBound.getRange()[i];
+            upper = upperBound.getRange()[i];
+        } else {
+            lower = lowerBound.getNumber();
+            upper = upperBound.getNumber();
+        }
+
+        // Generate a random number in lower and upper range.
+        static std::mt19937 re(std::random_device{}());
+        std::uniform_real_distribution unif(lower, upper);
+        double solution = unif(re);
+
+        position.push_back(solution);
+    }
+
+    return Solution(position);
 }
