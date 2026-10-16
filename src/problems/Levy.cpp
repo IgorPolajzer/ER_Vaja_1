@@ -23,16 +23,15 @@ double Levy::evaluate(const std::vector<double> &x_star) {
 
     // Second Term.
     for (int i = 0; i < getD() - 1; i++) {
-        auto x = x_star[i];
         auto omega = omegaList[i];
-        auto omegaD = omegaList.back();
-        checkBounds(x, i);
 
         secondTerm += std::pow((omega - 1), 2) * (1 + 10 * std::pow(std::sin(std::numbers::pi * omega + 1), 2));
-        secondTerm += std::pow((omegaD - 1), 2) * (1 + std::pow(std::sin(2 * std::numbers::pi * omegaD), 2));
     }
+
+    auto omegaD = omegaList.back();
+    auto thirdTerm = std::pow((omegaD - 1), 2) * (1 + std::pow(std::sin(2 * std::numbers::pi * omegaD), 2));
 
     auto firstTerm = std::pow(std::sin(std::numbers::pi * omegaList.front()), 2);
 
-    return firstTerm + secondTerm;
+    return firstTerm + secondTerm + thirdTerm;
 }

@@ -5,17 +5,15 @@
 #include "RandomSearch.h"
 
 Solution RandomSearch::execute(Problem* problem, int maxFes) {
-    Solution bestSolution;
-    int fes = 0;
+    // First evaluation.
+    auto bestSolution = problem->generateRandomSolution();
+    problem->evaluateSolution(bestSolution);
 
-    while(fes <= maxFes) {
+    for (int fes = 1; fes < maxFes; fes++) {
         auto solution = problem->generateRandomSolution();
-        auto fitness = problem->evaluate(solution);
 
-        if (fes == 0 || fitness < bestSolution.getValue())
+        if (problem->evaluateSolution(solution) < bestSolution.getValue())
             bestSolution = solution;
-
-        fes++;
     }
 
     return bestSolution;

@@ -6,13 +6,12 @@
 #define ER_VAJA_1_SOLUTION_H
 
 #include <string>
+#include <utility>
 #include <vector>
 
 class Solution {
 public:
-    Solution() {};
-    Solution(std::vector<double> position) : position(position) {};
-    virtual ~Solution() = default;
+    explicit Solution(std::vector<double> position) : position(std::move(position)) {}
 
     double getValue() const { return this->value; }
     void setValue(const double value) { this->value = value; }
@@ -20,7 +19,7 @@ public:
     const std::vector<double> &getPosition() const { return this->position; }
     void setPosition(const std::vector<double> &position) { this->position = position; }
 
-    std::string toString() {
+    std::string toString() const {
         std::string positionString;
 
         for (int i = 0; i < position.size(); i++) {
@@ -28,10 +27,10 @@ public:
         }
 
         return "Solution: \nValue: " + std::to_string(value) + "\nPosition: " + positionString;
-    };
+    }
 private:
     std::vector<double> position;
-    double value;
+    double value = 0.0;
 };
 
 

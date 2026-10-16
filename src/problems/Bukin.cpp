@@ -12,6 +12,9 @@ Bukin::Bukin() : Problem("Bukin", 2, Bound(std::vector{-15.0, -3.0}), Bound(std:
 double Bukin::evaluate(const std::vector<double> &x_star) {
     checkDimension(x_star);
 
+    checkBounds(x_star[0], 0);
+    checkBounds(x_star[1], 1);
+
     auto firstTerm = 100 * std::sqrt(std::abs(x_star[1] - 0.01 * std::pow(x_star[0], 2)));
     auto secondTerm = 0.01 * std::abs(x_star[0] + 10);
 

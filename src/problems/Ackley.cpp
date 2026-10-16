@@ -29,8 +29,7 @@ double Ackley::evaluate(const std::vector<double> &x_star) {
 
     // First Term.
     auto k = (1.0 / d) * firstSum;
-    auto root = std::pow(-b, 1.0 / k);
-    auto firstTerm = -a * std::exp(root);
+    auto firstTerm = -a * std::exp(-b * std::sqrt(k));
 
     // Second root.
     auto secondTerm = std::exp((1.0 / d) * secondSum);

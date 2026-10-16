@@ -9,8 +9,8 @@
 
 
 namespace Runner {
-    void execute(std::vector<Problem*> problems, Algorithm& algorithm);
-};
+    void execute(const std::vector<Problem*> &problems, Algorithm &algorithm);
+}
 
 
 #endif //ER_VAJA_1_RUNNER_H

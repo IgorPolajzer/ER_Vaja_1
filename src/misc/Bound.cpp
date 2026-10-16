@@ -10,14 +10,11 @@ Bound::Bound(const std::vector<double> &range) {
 
 std::variant<double, std::vector<double> > Bound::getBound() const {
     if (isRange())
-        return number;
+        return range;
 
-    return range;
+    return number;
 }
 
 bool Bound::isRange() const {
-    if (range.empty())
-        return false;
-
-    return true;
+    return !range.empty();
 }

@@ -9,8 +9,6 @@
 
 class RandomSearch : public Algorithm {
 public:
-    ~RandomSearch() override = default;
-
     Solution execute(Problem* problem, int maxFes) override;
 };
 

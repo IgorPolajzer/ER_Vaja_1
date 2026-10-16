@@ -17,11 +17,11 @@ public:
 
     virtual double evaluate(const std::vector<double> &x_star) = 0;
 
-    double evaluate(Solution &solution) {
+    double evaluateSolution(Solution &solution) {
         double fitness = evaluate(solution.getPosition());
         solution.setValue(fitness);
         return fitness;
-    };
+    }
 
     void checkBounds(double x, int index) const;
 
@@ -35,10 +35,8 @@ public:
     bool isScalable() const { return scalable; }
 
     Bound getLowerBound() const { return lowerBound; }
-    void setLowerBound(const Bound lowerBound) { this->lowerBound = lowerBound; }
 
     Bound getUpperBound() const { return upperBound; }
-    void setUpperBound(const Bound upperBound) { this->upperBound = upperBound; }
 
     Solution generateRandomSolution();
 

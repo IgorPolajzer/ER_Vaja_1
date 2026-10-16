@@ -3,8 +3,6 @@
 #include "problems/Ackley.h"
 #include "problems/Sphere.h"
 
-class Ackley;
-
 int main() {
     Sphere sphere(2);
     Ackley ackley(3);

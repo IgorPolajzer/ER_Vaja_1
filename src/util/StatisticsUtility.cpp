@@ -4,37 +4,38 @@
 
 #include "StatisticsUtility.h"
 
-#include <complex>
+#include <cmath>
 #include <iostream>
 #include <stdexcept>
 
-Solution StatisticsUtility::findBest(const std::vector<Solution> &solutions) {
+namespace StatisticsUtility {
+Solution findBest(const std::vector<Solution> &solutions) {
     if (solutions.empty())
         throw std::invalid_argument("The provided solutions are empty");
 
     Solution best = solutions[0];
 
-    for (auto s : solutions)
+    for (const auto &s : solutions)
         if (s.getValue() < best.getValue()) best = s;
 
     return best;
 }
 
 
-double StatisticsUtility::calculateAverage(const std::vector<Solution> &solutions) {
+double calculateAverage(const std::vector<Solution> &solutions) {
     if (solutions.empty())
         throw std::invalid_argument("The provided solutions are empty");
 
     double sum = 0;
 
-    for (auto s : solutions) {
+    for (const auto &s : solutions) {
         sum += s.getValue();
     }
 
     return sum / solutions.size();
 }
 
-double StatisticsUtility::calculateStandardDeviation(const std::vector<Solution>& solutions) {
+double calculateStandardDeviation(const std::vector<Solution>& solutions) {
     if (solutions.empty())
         throw std::invalid_argument("The provided solutions are empty");
 
@@ -50,7 +51,7 @@ double StatisticsUtility::calculateStandardDeviation(const std::vector<Solution>
     return std::sqrt(sum / solutions.size());
 }
 
-void StatisticsUtility::printStatistics(std::vector<Solution>& solutions) {
+void printStatistics(const std::vector<Solution> &solutions) {
     auto best = findBest(solutions);
     auto average = calculateAverage(solutions);
     auto stdDev = calculateStandardDeviation(solutions);
@@ -59,4 +60,5 @@ void StatisticsUtility::printStatistics(std::vector<Solution>& solutions) {
     std::cout << "Best solution: " << best.getValue() << std::endl;
     std::cout << "Average solution: " << average << std::endl;
     std::cout << "Standard deviation: " << stdDev << std::endl;
+}
 }

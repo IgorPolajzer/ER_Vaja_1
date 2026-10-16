@@ -21,8 +21,6 @@ add_library(er_core
         src/problems/Bukin.cpp
         src/problems/CarromTable.cpp
         src/algorithm/RandomSearch.cpp
-        src/algorithm/Solution.cpp
-        src/algorithm/Algorithm.cpp
         src/util/StatisticsUtility.cpp
         src/algorithm/Runner.cpp
 )
