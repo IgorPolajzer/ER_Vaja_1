@@ -7,9 +7,10 @@
 
 #include <vector>
 #include "algorithm/Solution.h"
+#include "problems/Problem.h"
 
 namespace StatisticsUtility {
-    void printStatistics(const std::vector<Solution> &solutions);
+    void printStatistics(const std::vector<Solution> &solutions, const Problem &problem);
 
     Solution findBest(const std::vector<Solution> &solutions);
 

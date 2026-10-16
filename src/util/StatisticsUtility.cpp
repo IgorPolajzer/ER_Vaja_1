@@ -5,7 +5,9 @@
 #include "StatisticsUtility.h"
 
 #include <cmath>
+#include <iomanip>
 #include <iostream>
+#include <sstream>
 #include <stdexcept>
 
 namespace StatisticsUtility {
@@ -51,14 +53,16 @@ double calculateStandardDeviation(const std::vector<Solution>& solutions) {
     return std::sqrt(sum / solutions.size());
 }
 
-void printStatistics(const std::vector<Solution> &solutions) {
+void printStatistics(const std::vector<Solution> &solutions, const Problem &problem) {
     auto best = findBest(solutions);
     auto average = calculateAverage(solutions);
     auto stdDev = calculateStandardDeviation(solutions);
 
-    std::cout << "Statistics for " + std::to_string(solutions.size()) + " solutions" << std::endl;
-    std::cout << "Best solution: " << best.getValue() << std::endl;
-    std::cout << "Average solution: " << average << std::endl;
-    std::cout << "Standard deviation: " << stdDev << std::endl;
+    std::ostringstream out;
+    out << std::defaultfloat << std::setprecision(3)
+            << "Problem : " << problem.getName() << " , Dimensions : " << problem.getD()
+            << " , Min : " << best.getValue() << " , Average : " << average << " , Std : " << stdDev;
+
+    std::cout << out.str() << std::endl;
 }
 }
