@@ -60,8 +60,8 @@ void printStatistics(const std::vector<Solution> &solutions, const Problem &prob
 
     std::ostringstream out;
     out << std::defaultfloat << std::setprecision(3)
-            << "Problem : " << problem.getName() << " , Dimensions : " << problem.getD()
-            << " , Min : " << best.getValue() << " , Average : " << average << " , Std : " << stdDev;
+            << "Problem: " << problem.getName() << " , Dimensions: " << problem.getD()
+            << " , Min: " << best.getValue() << " , Average: " << average << " , Std: " << stdDev;
 
     std::cout << out.str() << std::endl;
 }
