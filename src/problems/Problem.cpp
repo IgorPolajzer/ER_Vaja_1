@@ -3,10 +3,9 @@
 #include <random>
 #include <sstream>
 #include <stdexcept>
-#include <utility>
 
-Problem::Problem(std::string name, int d, Bound lowerBound, Bound upperBound, bool scalable)
-    : name(std::move(name)), d(d), scalable(scalable), lowerBound(std::move(lowerBound)), upperBound(std::move(upperBound)) {
+Problem::Problem(const std::string& name, int d, const Bound& lowerBound, const Bound& upperBound, bool scalable)
+    : name(name), d(d), scalable(scalable), lowerBound(lowerBound), upperBound(upperBound) {
     if (d <= 0)
         throw std::invalid_argument("The problem dimension must be positive.");
 

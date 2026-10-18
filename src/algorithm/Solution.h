@@ -6,12 +6,11 @@
 #define ER_VAJA_1_SOLUTION_H
 
 #include <string>
-#include <utility>
 #include <vector>
 
 class Solution {
 public:
-    explicit Solution(std::vector<double> position) : position(std::move(position)) {}
+    explicit Solution(const std::vector<double>& position) : position(position) {}
 
     double getValue() const { return this->value; }
     void setValue(const double value) { this->value = value; }

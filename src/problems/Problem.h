@@ -41,7 +41,7 @@ public:
     Solution generateRandomSolution();
 
 protected:
-    Problem(std::string name, int d, Bound lowerBound, Bound upperBound, bool scalable);
+    Problem(const std::string& name, int d, const Bound& lowerBound, const Bound& upperBound, bool scalable);
 
     static void checkBoundsType(const Bound &lowerBound, const Bound &upperBound);
 
